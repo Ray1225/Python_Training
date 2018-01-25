@@ -12,3 +12,28 @@ class Solution(object):
                 for i in range(1,len(nums)-1):
                     if (nums[i]!=nums[i+1] and nums[i]!=nums[i-1]):
                         return nums[i]
+
+
+"""
+Approach 2:
+
+class Solution(object):
+    def singleNumber(self, nums):
+        return 2 * sum(set(nums)) - sum(nums)
+
+Approach 3:
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        hash_table = {}
+        for i in nums:
+            try:
+                hash_table.pop(i)
+            except:
+                hash_table[i] = 1
+        return hash_table.popitem()[0]
+
+"""
