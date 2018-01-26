@@ -1,0 +1,11 @@
+class Solution(object):
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        length = len(nums)
+        count0 = nums.count(0)
+        for i in range(count0):
+            nums.remove(0)
+        nums.extend([0]*count0)
